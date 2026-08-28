@@ -36,6 +36,49 @@ const translations = {
     "home.simpleDesc":
       "From smart budgeting tools to instant notifications and card controls, Barclays online banking helps you stay in control — wherever life takes you.",
 
+    "home.premier.eyebrow": "Personal banking",
+    "home.premier.title": "There's even more to Premier",
+    "home.premier.desc":
+      "Be a step ahead with exclusive new benefits designed to give you even more flexibility, choice and confidence with your money. Eligibility criteria apply.",
+    "home.premier.cta": "Explore what's new to Premier",
+    "home.premier.switchTitle": "Switch your current account to Premier Banking today.",
+    "home.premier.switchCta": "Switch to Premier",
+
+    "home.offer.title": "Up to £600 experience",
+    "home.offer.desc":
+      "Open a Premier Current Account and switch to us in our app to enjoy a signature experience worth up to £600. Terms and conditions and eligibility apply.",
+    "home.offer.cta": "How to switch",
+
+    "home.children.title": "Children and money",
+    "home.children.desc":
+      "Whether you're a parent, grandparent or guardian, we'll help you understand the financial world of the children in your life, so they can build great habits from an early age.",
+    "home.children.cta": "Children and money",
+
+    "home.app.title": "Join the millions of customers banking in our app",
+    "home.app.desc":
+      "Banking made simple, secure and always within reach — whether you're checking your balance, sending money, or managing your spending.",
+    "home.app.cta": "The Barclays app",
+
+    "home.features.title": "Powerful features at your fingertips",
+    "home.features.desc":
+      "From smart budgeting tools to instant notifications and card controls, the Barclays app helps you stay in control — wherever life takes you.",
+    "home.features.cta": "Apply for a Barclays account",
+
+    "home.explorePremier.title": "Explore Premier Banking",
+    "home.explorePremier.desc":
+      "Discover a world of Premier benefits and perks, with access to exclusive savings rates and mortgage options, 24/7 UK-based support and higher payment limits.",
+    "home.explorePremier.cta": "More about Premier",
+
+    "home.survey.title": "Independent service quality survey results",
+    "home.survey.desc":
+      "An independent survey asked customers if they would recommend their personal current account provider to friends and family.",
+    "home.survey.fca":
+      "The Financial Conduct Authority also requires us to publish information about service quality for personal current accounts.",
+
+    "home.scams.title": "Authorised push payment (APP) scams rankings",
+    "home.scams.desc":
+      "Authorised push payment (APP) scams happen when someone is tricked into transferring money to a fraudster's bank account. Find out more about how we protect you.",
+
     "product.currentAccounts.title": "Current accounts",
     "product.currentAccounts.desc": "Find a current account that works for you.",
     "product.creditCards.title": "Credit cards",
@@ -239,6 +282,49 @@ const translations = {
     "home.simpleTitle": "Une banque simple, sécurisée et toujours accessible",
     "home.simpleDesc":
       "Des outils de budget intelligents aux notifications instantanées et au contrôle de vos cartes, la banque en ligne Barclays vous aide à garder le contrôle, où que vous soyez.",
+
+    "home.premier.eyebrow": "Banque personnelle",
+    "home.premier.title": "Encore plus d'avantages avec Premier",
+    "home.premier.desc":
+      "Prenez une longueur d'avance grâce à de nouveaux avantages exclusifs conçus pour vous offrir encore plus de flexibilité, de choix et de confiance dans la gestion de votre argent. Critères d'éligibilité applicables.",
+    "home.premier.cta": "Découvrir les nouveautés Premier",
+    "home.premier.switchTitle": "Transférez votre compte courant vers Premier Banking dès aujourd'hui.",
+    "home.premier.switchCta": "Passer à Premier",
+
+    "home.offer.title": "Jusqu'à 600 £ d'avantages",
+    "home.offer.desc":
+      "Ouvrez un compte courant Premier et transférez-le via notre application pour profiter d'une expérience signature d'une valeur allant jusqu'à 600 £. Conditions et éligibilité applicables.",
+    "home.offer.cta": "Comment transférer",
+
+    "home.children.title": "Les enfants et l'argent",
+    "home.children.desc":
+      "Que vous soyez parent, grand-parent ou tuteur, nous vous aidons à faire comprendre le monde financier aux enfants de votre entourage, pour qu'ils développent de bonnes habitudes dès le plus jeune âge.",
+    "home.children.cta": "Les enfants et l'argent",
+
+    "home.app.title": "Rejoignez les millions de clients qui utilisent notre application",
+    "home.app.desc":
+      "Une banque simple, sécurisée et toujours accessible — que vous consultiez votre solde, envoyiez de l'argent ou gériez vos dépenses.",
+    "home.app.cta": "L'application Barclays",
+
+    "home.features.title": "Des fonctionnalités puissantes à portée de main",
+    "home.features.desc":
+      "Des outils de budget intelligents aux notifications instantanées et au contrôle de vos cartes, l'application Barclays vous aide à garder le contrôle, où que vous soyez.",
+    "home.features.cta": "Ouvrir un compte Barclays",
+
+    "home.explorePremier.title": "Découvrir Premier Banking",
+    "home.explorePremier.desc":
+      "Découvrez un monde d'avantages Premier, avec des taux d'épargne et des options hypothécaires exclusifs, un support basé au Royaume-Uni 24/7 et des plafonds de paiement plus élevés.",
+    "home.explorePremier.cta": "En savoir plus sur Premier",
+
+    "home.survey.title": "Résultats indépendants de l'enquête sur la qualité de service",
+    "home.survey.desc":
+      "Une enquête indépendante a demandé aux clients s'ils recommanderaient leur fournisseur de compte courant à leurs proches.",
+    "home.survey.fca":
+      "La Financial Conduct Authority exige également que nous publiions des informations sur la qualité de service des comptes courants personnels.",
+
+    "home.scams.title": "Classement des fraudes par virement autorisé (APP)",
+    "home.scams.desc":
+      "Les fraudes par virement autorisé (APP) surviennent lorsqu'une personne est trompée pour effectuer un virement vers le compte d'un fraudeur. Découvrez comment nous vous protégeons.",
 
     "product.currentAccounts.title": "Comptes courants",
     "product.currentAccounts.desc": "Trouvez le compte courant qui vous convient.",

@@ -24,7 +24,7 @@ export function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-primary text-primary-foreground">
+    <header className="sticky top-0 z-50 bg-secondary text-secondary-foreground border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link href="/">
           <Logo />
@@ -39,12 +39,12 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           <LanguageSwitcher light />
           <Link href="/login">
-            <Button variant="ghost" className="text-primary-foreground hover:bg-white/10">
+            <Button variant="ghost" className="rounded-full text-secondary-foreground hover:bg-white/10">
               {t("nav.login")}
             </Button>
           </Link>
           <Link href="/register">
-            <Button className="bg-white text-primary hover:bg-white/90">{t("nav.signup")}</Button>
+            <Button className="rounded-full">{t("nav.signup")}</Button>
           </Link>
         </div>
         <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">

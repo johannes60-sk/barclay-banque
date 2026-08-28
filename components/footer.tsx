@@ -36,7 +36,7 @@ export function Footer() {
   ]
 
   return (
-    <footer style={{ backgroundColor: "#00253B" }} className="text-white">
+    <footer className="bg-secondary text-secondary-foreground border-t border-border">
       <div className="mx-auto max-w-7xl px-4 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
         {columns.map((col) => (
           <div key={col.title}>
