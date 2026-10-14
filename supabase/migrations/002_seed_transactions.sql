@@ -1,26 +1,30 @@
 -- ============================================
 -- DEFAULT DEMO TRANSACTIONS
 -- ============================================
--- Seeds each new user with a modest, realistic GBP transaction history
--- spread over the 3 months before signup.
+-- Seeds each new user with the transaction history shown in the reference captures.
+-- The opening balance row is omitted because it is not a transaction.
+-- Profile balances are not changed by this seed.
 
 CREATE OR REPLACE FUNCTION public.create_default_transactions()
 RETURNS TRIGGER AS $$
 BEGIN
   INSERT INTO public.transactions (user_id, type, description, amount, date, status, iban, reference)
   VALUES
-    (NEW.id, 'credit', 'Salary payment', 1850.00, NOW() - INTERVAL '85 days', 'completed', 'GB29NWBK60161331926819', 'SALARY-001'),
-    (NEW.id, 'debit', 'Transfer to James Wilson', 220.00, NOW() - INTERVAL '80 days', 'completed', 'GB94BARC20201530093459', 'TRANSFER-OUT-001'),
-    (NEW.id, 'debit', 'Transfer to Emma Clarke', 45.80, NOW() - INTERVAL '74 days', 'completed', 'GB33BUKB20201555555555', 'TRANSFER-OUT-002'),
-    (NEW.id, 'credit', 'Transfer from Oliver Bennett', 300.00, NOW() - INTERVAL '68 days', 'completed', 'GB15MIDL40051512345678', 'TRANSFER-IN-001'),
-    (NEW.id, 'debit', 'Transfer to Sophie Taylor', 89.50, NOW() - INTERVAL '60 days', 'completed', 'GB76LOYD30949312345678', 'TRANSFER-OUT-003'),
-    (NEW.id, 'credit', 'Salary payment', 1850.00, NOW() - INTERVAL '55 days', 'completed', 'GB29NWBK60161331926819', 'SALARY-002'),
-    (NEW.id, 'debit', 'Transfer to Liam Harris', 156.30, NOW() - INTERVAL '48 days', 'completed', 'GB98HBUK40127612345678', 'TRANSFER-OUT-004'),
-    (NEW.id, 'debit', 'Transfer to Ava Robinson', 17.90, NOW() - INTERVAL '40 days', 'completed', 'GB55RBOS16101312345678', 'TRANSFER-OUT-005'),
-    (NEW.id, 'credit', 'Transfer from Noah Walker', 75.00, NOW() - INTERVAL '33 days', 'completed', 'GB12SANT40051512345678', 'TRANSFER-IN-002'),
-    (NEW.id, 'debit', 'Transfer to Isla Young', 42.60, NOW() - INTERVAL '25 days', 'completed', 'GB40CLYD82271612345678', 'TRANSFER-OUT-006'),
-    (NEW.id, 'credit', 'Salary payment', 1850.00, NOW() - INTERVAL '20 days', 'completed', 'GB29NWBK60161331926819', 'SALARY-003'),
-    (NEW.id, 'debit', 'Transfer to Charlie Scott', 300.00, NOW() - INTERVAL '12 days', 'completed', 'GB08CPBK08926912345678', 'TRANSFER-OUT-007');
+    (NEW.id, 'credit', 'Salary Payout Marlinspike Consulting Sept./26 Elect. Deposit ****45113612572', 6500.00, '2026-09-01T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'credit', 'Salary Payout Millrun Limited Sept./26 Elect. Deposit ****44316662910', 5800.00, '2026-09-02T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'Bill Payment to Tiffany&Co Online Store Order 0533284', -3269.77, '2026-09-03T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'Debit Card Terminal Checks ****45113612572 Mandarin Hotel Munich', -1028.09, '2026-09-04T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'ATM Cash Machine withdrawal at Stadtsparkasse München N/Rail Lothstraße 1', -854.98, '2026-09-07T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'credit', 'Transfer Elect. Deposit from T.Horlick, Payout of Shares Ayanda Capital limited', 4800000.00, '2026-09-07T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'Bill Payment to travel agency, London Star Travel LTD, Sort Code 20-32-53, Account *****93525074', -1850.00, '2026-09-08T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'Debit Card Terminal Checks ****45113612572 Hyatt Hotel Dubai', -3250.00, '2026-09-08T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'Debit Card Purchase ****45113612572, KMF 120816 VISA DDA', -378.67, '2026-09-09T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'Bill Payment to Simple XFERS DR N****0000021K6F', -2486.96, '2026-09-10T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'STO Bank Fees & charges Sept./2026', -311.45, '2026-09-10T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'credit', 'Salary Payout Marlinspike Consulting 09/26 Elect. Deposit ****45113612572', 16430.50, '2026-09-10T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'credit', 'Salary Payout Millrun Limited Sept./26 Elect. Deposit ****44316662910', 5820.20, '2026-09-11T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'Transfer to Alice Horlick, Sort Code 20-32-53 Account ****61475841 For Rental&Business Offices', -4200.00, '2026-09-11T00:00:00Z', 'completed', NULL, NULL),
+    (NEW.id, 'debit', 'ATM Cash Machine withdrawal at Lloyds Bank ATM Richmond', -404.98, '2026-09-14T00:00:00Z', 'completed', NULL, NULL);
 
   RETURN NEW;
 END;

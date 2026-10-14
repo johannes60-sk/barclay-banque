@@ -73,13 +73,9 @@ export default function TransactionsPage() {
             ) : (
               <div className="space-y-4">
                 {transactions.map((transaction) => {
-                  const isUserTransfer = !!transaction.iban && (!transaction.reference || !transaction.reference.startsWith("TRANSFER-"))
-
                   const TransactionRow = (
                     <div
-                      className={`flex flex-col md:flex-row md:items-start md:justify-between gap-3 border-b border-border pb-4 last:border-0 last:pb-0 ${
-                        isUserTransfer ? "cursor-pointer hover:bg-muted/50 transition-colors rounded-lg p-2" : ""
-                      }`}
+                      className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 border-b border-border pb-4 last:border-0 last:pb-0 cursor-pointer hover:bg-muted/50 transition-colors rounded-lg p-2"
                     >
                       <div className="flex items-start gap-2 md:gap-3 flex-1 min-w-0">
                         <div
@@ -138,10 +134,6 @@ export default function TransactionsPage() {
                     </div>
                   )
 
-                  if (!isUserTransfer) {
-                    return <div key={transaction.id}>{TransactionRow}</div>
-                  }
-
                   return (
                     <Dialog key={transaction.id}>
                       <DialogTrigger asChild>{TransactionRow}</DialogTrigger>
@@ -183,27 +175,6 @@ export default function TransactionsPage() {
                             <div className="grid grid-cols-3 gap-2 py-2">
                               <p className="text-muted-foreground font-medium col-span-1">{t("transactions.details.sender")}</p>
                               <p className="text-foreground font-medium text-right col-span-2">{user.name || "-"}</p>
-                            </div>
-
-                            <div className="grid grid-cols-3 gap-2 py-2 bg-muted/40 rounded-md p-2 -mx-2">
-                              <p className="text-muted-foreground font-medium col-span-1">IBAN</p>
-                              <p className="text-foreground font-mono text-xs md:text-sm text-right col-span-2 break-all">
-                                {transaction.iban}
-                              </p>
-                            </div>
-
-                            <div className="grid grid-cols-3 gap-2 py-2 bg-muted/40 rounded-md p-2 -mx-2 mt-1">
-                              <p className="text-muted-foreground font-medium col-span-1">SWIFT / BIC</p>
-                              <p className="text-foreground font-mono text-xs md:text-sm text-right col-span-2">
-                                {transaction.swift || "N/A"}
-                              </p>
-                            </div>
-
-                            <div className="grid grid-cols-3 gap-2 py-2">
-                              <p className="text-muted-foreground font-medium col-span-1">{t("transactions.details.reference")}</p>
-                              <p className="text-foreground text-right col-span-2 italic break-words">
-                                {transaction.reference ? `"${transaction.reference}"` : "-"}
-                              </p>
                             </div>
 
                             <div className="grid grid-cols-3 gap-2 py-2">
