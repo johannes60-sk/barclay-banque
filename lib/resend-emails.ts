@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const FROM_EMAIL = "Barclays <noreply@barclays-demo.com>";
+const FROM_EMAIL = "Barclays <noreply@barclaiy.co.uk>";
 
 export interface SendOTPEmailParams {
   to: string;

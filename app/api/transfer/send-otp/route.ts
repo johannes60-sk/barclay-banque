@@ -19,6 +19,7 @@ export async function POST(request: Request) {
       .single();
 
     if (profileError || !profile) {
+      console.error("[OTP] Profile lookup failed for", userEmail, "->", profileError);
       return NextResponse.json(
         { success: false, error: "User not found" },
         { status: 404 },
