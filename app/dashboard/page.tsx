@@ -65,7 +65,7 @@ export default function DashboardPage() {
 
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
-            <BalanceCard balance={user.balance} accountNumber={user.accountNumber} />
+            <BalanceCard balance={user.balance} />
             <RecentTransactions />
           </div>
 

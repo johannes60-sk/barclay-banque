@@ -5,13 +5,13 @@ import { Eye, EyeOff } from "lucide-react"
 import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { formatGBP } from "@/lib/format"
+import { BANK_DETAILS } from "@/lib/bank-details"
 
 interface BalanceCardProps {
   balance: number
-  accountNumber: string
 }
 
-export function BalanceCard({ balance, accountNumber }: BalanceCardProps) {
+export function BalanceCard({ balance }: BalanceCardProps) {
   const [showBalance, setShowBalance] = useState(true)
   const { t } = useLanguage()
 
@@ -52,11 +52,24 @@ export function BalanceCard({ balance, accountNumber }: BalanceCardProps) {
           </div>
         </div>
 
-        <div className="mt-4">
-          <p className="text-xs text-primary-foreground/80">
-            {t("dashboard.accountNumber")}: <span className="font-mono">{accountNumber}</span>
-          </p>
-        </div>
+        <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 text-xs text-primary-foreground/80 sm:grid-cols-2">
+          <div>
+            <dt className="text-primary-foreground/60">{t("dashboard.sortCode")}</dt>
+            <dd className="font-mono">{BANK_DETAILS.sortCode}</dd>
+          </div>
+          <div>
+            <dt className="text-primary-foreground/60">{t("dashboard.accountNo")}</dt>
+            <dd className="font-mono">{BANK_DETAILS.accountNumber}</dd>
+          </div>
+          <div>
+            <dt className="text-primary-foreground/60">{t("dashboard.swift")}</dt>
+            <dd className="font-mono">{BANK_DETAILS.swift}</dd>
+          </div>
+          <div>
+            <dt className="text-primary-foreground/60">{t("dashboard.iban")}</dt>
+            <dd className="font-mono break-all">{BANK_DETAILS.iban}</dd>
+          </div>
+        </dl>
       </div>
     </Card>
   )
