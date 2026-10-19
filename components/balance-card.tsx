@@ -16,13 +16,13 @@ export function BalanceCard({ balance }: BalanceCardProps) {
   const { t } = useLanguage()
 
   return (
-    <Card className="relative w-full overflow-hidden border-0 bg-gradient-to-br from-primary to-primary/80 p-6 md:p-8 text-primary-foreground shadow-xl">
+    <Card className="relative w-full min-w-0 overflow-hidden border-0 bg-gradient-to-br from-primary to-primary/80 p-4 sm:p-6 md:p-8 text-primary-foreground shadow-xl">
       <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-white/10" />
       <div className="absolute bottom-0 left-0 h-24 w-24 -translate-x-8 translate-y-8 rounded-full bg-white/10" />
 
       <div className="relative">
         <div className="mb-6 flex items-start justify-between">
-          <div className="flex-1">
+          <div className="min-w-0 flex-1">
             <div className="flex flex-col gap-2 w-full mb-1">
               <span style={{ alignSelf: "flex-start" }} className="text-xs text-primary-foreground/70 font-semibold">
                 {new Date().toLocaleDateString("en-GB", {
@@ -33,9 +33,9 @@ export function BalanceCard({ balance }: BalanceCardProps) {
               </span>
               <p className="text-sm font-medium text-primary-foreground/80">{t("dashboard.balance")}</p>
             </div>
-            <div className="flex items-center gap-2 md:gap-3">
+            <div className="flex min-w-0 items-center gap-2 md:gap-3">
               {showBalance ? (
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">
+                <p className="min-w-0 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold break-all">
                   {formatGBP(balance)}
                 </p>
               ) : (

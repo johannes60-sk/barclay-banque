@@ -68,12 +68,12 @@ export function RecentTransactions() {
   }
 
   return (
-    <Card className="w-full p-4 md:p-6">
+    <Card className="w-full min-w-0 p-4 md:p-6">
       <h2 className="mb-4 text-lg md:text-xl font-semibold text-card-foreground">
         {t("dashboard.recentTransactions")}
       </h2>
 
-      <div className="space-y-4 max-h-[600px] overflow-y-auto overflow-x-hidden pr-2">
+      <div className="space-y-4 max-h-[600px] overflow-y-auto overflow-x-hidden pr-1 md:pr-2">
         {transactions.map((transaction) => {
           const isUserTransfer = !!transaction.iban && (!transaction.reference || !transaction.reference.startsWith("TRANSFER-"))
 

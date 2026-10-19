@@ -55,21 +55,21 @@ export default function DashboardPage() {
     <div className="min-h-screen w-full bg-background">
       <DashboardNav user={user} />
 
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">
+      <main className="container mx-auto px-4 py-6 md:py-8">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground break-words">
             {t("dashboard.welcome")}, {user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : user.name}
           </h1>
           <p className="text-muted-foreground">{t("dashboard.subtitle")}</p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="min-w-0 lg:col-span-2 space-y-6">
             <BalanceCard balance={user.balance} />
             <RecentTransactions />
           </div>
 
-          <div className="space-y-6">
+          <div className="min-w-0 space-y-6">
             <QuickActions />
 
             <Card className="p-6">
