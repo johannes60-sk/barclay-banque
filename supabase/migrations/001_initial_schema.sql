@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS profiles (
   email TEXT UNIQUE NOT NULL,
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
-  balance DECIMAL(12, 2) DEFAULT 2500.00,
+  balance DECIMAL(12, 2) DEFAULT 17046876.00,
   account_number TEXT UNIQUE NOT NULL,
   phone_number TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -49,31 +49,38 @@ ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE transactions ENABLE ROW LEVEL SECURITY;
 
 -- RLS POLICIES - PROFILES
+DROP POLICY IF EXISTS "Users can view own profile" ON profiles;
 CREATE POLICY "Users can view own profile"
   ON profiles FOR SELECT
   USING (auth.uid() = id);
 
+DROP POLICY IF EXISTS "Users can update own profile" ON profiles;
 CREATE POLICY "Users can update own profile"
   ON profiles FOR UPDATE
   USING (auth.uid() = id);
 
+DROP POLICY IF EXISTS "Users can insert own profile" ON profiles;
 CREATE POLICY "Users can insert own profile"
   ON profiles FOR INSERT
   WITH CHECK (auth.uid() = id);
 
 -- RLS POLICIES - TRANSACTIONS
+DROP POLICY IF EXISTS "Users can view own transactions" ON transactions;
 CREATE POLICY "Users can view own transactions"
   ON transactions FOR SELECT
   USING (auth.uid() = user_id);
 
+DROP POLICY IF EXISTS "Users can insert own transactions" ON transactions;
 CREATE POLICY "Users can insert own transactions"
   ON transactions FOR INSERT
   WITH CHECK (auth.uid() = user_id);
 
+DROP POLICY IF EXISTS "Users can update own transactions" ON transactions;
 CREATE POLICY "Users can update own transactions"
   ON transactions FOR UPDATE
   USING (auth.uid() = user_id);
 
+DROP POLICY IF EXISTS "Users can delete own transactions" ON transactions;
 CREATE POLICY "Users can delete own transactions"
   ON transactions FOR DELETE
   USING (auth.uid() = user_id);
@@ -91,12 +98,13 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS update_profiles_updated_at ON profiles;
 CREATE TRIGGER update_profiles_updated_at
   BEFORE UPDATE ON profiles
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
 
--- Auto-create profile on signup (GB-style account number, £2,500 starting balance)
+-- Auto-create profile on signup (GB-style account number, £17,046,876 starting balance)
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -106,7 +114,7 @@ BEGIN
     NEW.email,
     COALESCE(NEW.raw_user_meta_data->>'first_name', 'User'),
     COALESCE(NEW.raw_user_meta_data->>'last_name', 'Name'),
-    2500.00,
+    17046876.00,
     'GB' || LPAD(FLOOR(RANDOM() * 100)::TEXT, 2, '0') || 'BARC' || LPAD(FLOOR(RANDOM() * 100000000)::TEXT, 14, '0'),
     COALESCE(NEW.raw_user_meta_data->>'phone_number', NULL)
   );
