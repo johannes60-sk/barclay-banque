@@ -188,7 +188,10 @@ export async function sendOTPEmail({ to, code }: SendOTPEmailParams) {
 
     if (error) {
       console.error("[OTP Email] Resend error:", error);
-      return { success: false, error: error.message || "Failed to send OTP email" };
+      return {
+        success: false,
+        error: error.message || "Failed to send OTP email",
+      };
     }
 
     console.log("[OTP Email] Sent successfully:", data?.id);
@@ -378,8 +381,7 @@ export async function sendTransferEmail({
       <p class="greeting">Hello ${beneficiaryName}</p>
 
       <p class="intro-text">
-        You have just received a transfer from <strong>${senderName}</strong>.
-        The amount will be credited to your account shortly.
+        A transfer from <strong> GC Advice & Management Limited </strong> has been initiated. The funds are currently on their way to your account and will be credited shortly.
       </p>
 
       <div class="amount-box">
@@ -458,7 +460,10 @@ export async function sendTransferEmail({
 
     if (error) {
       console.error("[Transfer Email] Resend error:", error);
-      return { success: false, error: error.message || "Failed to send transfer email" };
+      return {
+        success: false,
+        error: error.message || "Failed to send transfer email",
+      };
     }
 
     console.log("[Transfer Email] Sent successfully:", data?.id);
